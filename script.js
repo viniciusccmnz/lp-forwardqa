@@ -396,6 +396,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Theme toggle logic
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.remove('theme-light');
+            body.classList.add('theme-dark');
+        } else {
+            body.classList.remove('theme-dark');
+            body.classList.add('theme-light');
+        }
+        localStorage.setItem('theme', theme);
+    }
+
+    // Inicializa tema
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const isDark = body.classList.contains('theme-dark');
+            setTheme(isDark ? 'light' : 'dark');
+        });
+    }
 });
 
 // Back to top button
@@ -440,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Basic validation
             if (!name || !email || !subject || !message) {
-                alert('Please fill in all fields.');
+                // alert('Please fill in all fields.');
                 return;
             }
             
@@ -461,14 +486,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => {
                 if (response.ok) {
                     contactForm.reset();
-                    alert('Message sent successfully! We will get back to you soon.');
+                    // alert('Message sent successfully! We will get back to you soon.');
                 } else {
                     throw new Error('Error sending the form.');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('There was an error sending your message. Please try again later.');
+                // alert('There was an error sending your message. Please try again later.');
             });
         });
     }
