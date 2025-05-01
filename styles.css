@@ -1525,4 +1525,23 @@ footer {
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(66, 135, 245, 0.22);
+}
+
+.whatsapp-disabled {
+    background-color: #e0e0e0 !important;
+    color: #888 !important;
+    border: 1.5px dashed #bbb !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.whatsapp-disabled i.fas.fa-lock {
+    color: #888;
+    font-size: 1.2em;
+    margin-right: 0.4em;
 } 
