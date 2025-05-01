@@ -508,4 +508,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+
+// Fecha o menu mobile ao clicar fora
+document.addEventListener('click', function(event) {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    if (
+        navLinks && hamburger &&
+        navLinks.classList.contains('active') &&
+        !navLinks.contains(event.target) &&
+        !hamburger.contains(event.target)
+    ) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
 }); 

@@ -869,17 +869,15 @@ footer {
 
 @media (max-width: 768px) {
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        padding: 0 4vw;
         height: 56px;
     }
     .logo {
-        padding-left: 6vw !important;
-        min-width: 130px;
-        display: flex;
-        align-items: center;
-        height: 56px;
+        padding-left: 4vw !important;
+    }
+    .hamburger {
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
     }
     .nav-actions {
         display: flex;
